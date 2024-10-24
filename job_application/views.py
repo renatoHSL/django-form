@@ -21,10 +21,10 @@ def index(request):
                                 date=date,
                                 occupation=occupation)
 
-            message_body = f"A new job applicaton was submitted. Thank you, {first_name}"
-            email_message = EmailMessage("Form submission confirmation", message_body, to=[email])
-            email_message.send()
-
+            # TODO - no working, probably because the lack of email configuration in settings.py
+            # message_body = f"A new job application was submitted. Thank you, {first_name}"
+            # email_message = EmailMessage("Form submission confirmation", message_body, to=[email])
+            # email_message.send()
 
             messages.success(request, "Form submitted successfully")
     return render(request, "index.html")
